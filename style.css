@@ -1,0 +1,533 @@
+/* Importa a fonte Poppins do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+/* Reseta margens, paddings, e define fonte padrão para todos os elementos */
+*{
+    font-family: "poppins", sans-serif; /* Fonte padrão */
+    margin: 0; /* Remove margens */
+    padding: 0; /* Remove espaçamentos internos */
+    box-sizing: border-box; /* Facilita o cálculo de tamanhos e evita overflow */
+    text-decoration: none; /* Remove sublinhados */
+    list-style: none; /* Remove marcadores de listas */
+}
+
+/* Estilos do corpo da página */
+body{
+    max-width: 1200px; /* Largura máxima da página */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    background-color:var(--search-bar); /* Cor de fundo definida na variável */
+    height: 100vh; /* Altura total da viewport */
+    overflow-y: auto; /* Rolagem vertical quando necessário */
+    overflow-x: hidden; /* Esconde rolagem horizontal */
+}
+
+/* Estilização da barra de navegação fixa */
+nav{
+    position: fixed; /* Fixa no topo da página */
+    top:0;
+    left:0;
+    height:70px; /* Altura da navbar */
+    background-color: var(--search-bar); /* Cor de fundo da navbar */
+    width: 100%; /* Largura total */
+}
+
+/* Container flexível para itens do menu */
+.menu {
+    display: flex; /* Itens alinhados em linha */
+    align-items: center; /* Centraliza verticalmente */
+    gap: 2rem; /* Espaçamento entre itens */
+}
+
+/* Lista de links dentro do menu */
+.menu .nav-links {
+    display: flex; /* Alinha os links horizontalmente */
+    gap: 2rem; /* Espaçamento entre links */
+    margin: 0;
+    padding: 0;
+}
+
+/* Botão contato com margem à esquerda */
+.menu .btn-contato {
+    margin-left: 1rem;
+}
+
+/* Estilização principal da navbar */
+nav .nav-primary{
+    position: sticky; /* Fixa enquanto rola dentro do container pai */
+    top: 0;
+    height: 100%; /* Altura completa da navbar */
+    max-width: 1280px; /* Largura máxima */
+    width: 100%; /* Ocupa toda a largura disponível */
+    background-color: var(--nav-color); /* Cor de fundo */
+    margin: 0 auto; /* Centraliza o container */
+    padding: 0 30px; /* Espaçamento horizontal interno */
+    display: flex; /* Flexbox para distribuir itens */
+    align-items: center; /* Alinhamento vertical */
+    justify-content: space-between; /* Espaço máximo entre elementos */
+    gap: 10px; /* Espaçamento entre itens */
+}    
+
+/* Links da navbar */
+nav .nav-primary li a{
+    padding:10px; /* Espaçamento interno */
+    background-color: rgb(6, 8, 104); /* Cor de fundo dos links */
+    font-size: 1.2rem; /* Tamanho da fonte */
+}
+
+/* Container flexível para os links de navegação */
+.nav-primary .nav-links{
+    display:flex;
+    align-items: center; /* Centraliza verticalmente */
+}
+
+/* Efeito hover nos links */
+.nav-primary .nav-links li a:hover{
+    color: var(--search-text); /* Cor ao passar o mouse */
+    transition: 0.3s all; /* Transição suave */
+}
+
+/* Seção topo do site, imagem com posição relativa para controle */
+section.topo-do-site .img {
+    position: relative; /* Posicionamento relativo */
+    width: 350px; /* Largura fixa */
+    height: 520px; /* Altura fixa */
+    max-width: 100%; /* Responsivo, não ultrapassa 100% */
+    display: flex;
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    padding: 0;
+    margin: 0;
+    background: transparent; /* Fundo transparente */
+    border: none;
+    z-index: 1; /* Fica acima de outros elementos */
+}
+
+/* Estilização da imagem dentro da seção topo */
+section.topo-do-site .img img {
+    width: 100%; /* Largura total do container */
+    height: 100%; /* Altura total do container */
+    object-fit: cover; /* Cobre todo o espaço mantendo proporção */
+    border-radius: 10px; /* Cantos arredondados */
+    display: block; /* Remove espaços em branco abaixo da imagem */
+}
+
+/* Estilo dos itens da lista dentro da navbar */
+.nav-primary .nav-links li{
+    list-style: none; /* Remove marcador */
+    margin: 0 5px; /* Margem lateral entre itens */
+}
+
+/* Estilização geral dos links de navegação */
+.nav-links li a{
+    position:relative; /* Para efeito antes do link */
+    text-decoration: none; /* Remove sublinhado */
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--text-color); /* Cor do texto */
+    padding:10px;
+}
+
+/* Estilização do logo dentro da navbar */
+nav .nav-primary .logo a{
+    font-size: 25px;
+    font-weight: 500;
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+/* Pequeno círculo animado abaixo do link quando hover */
+.nav-links li a::before{
+    content:'';
+    position: absolute;
+    left: 50%;
+    bottom:0;
+    transform: translateX(50%);
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;
+    background: var(--text-color);
+    opacity: 0; /* Invisível inicialmente */
+    transition: all 0.3s ease; /* Animação suave */
+}
+
+/* Torna o círculo visível no hover */
+.nav-links li:hover a::before{
+    opacity: 1;
+}
+
+/* Classe flex para display flex */
+.flex{
+    display: flex;
+}
+
+/* Declaração das cores padrão em variáveis CSS */
+:root{
+    --body-color: #2B3333;
+    --nav-color: #0b0c64;
+    --sid-nav: #30918F;
+    --text-color: #ffffff;
+    --search-bar: #0d0552;
+    --search-text: #1FBBB8;
+} 
+
+/* Fundo com gradiente escuro */
+.background{
+    background-color: var(--body-color);
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+}
+
+/* Cabeçalho estilizado com cor e espaçamento */
+header{
+    background-color: var(--nav-color);
+    justify-content: space-around; /* Espaçamento entre itens */
+    padding: 50px;
+    text-align: center;
+    padding-top: 1rem;
+    display:flex;
+    align-items: center;
+}
+
+/* Container do nav-primary dentro do header */
+header > .nav-primary{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto; 
+    padding: 0 30px; /* Espaçamento interno horizontal */
+    background-color: var(--nav-color);
+    margin-top: 100px; /* Distância do topo */
+}
+
+/* Estilização dos links no header */
+header a{
+    color: var(--text-color);
+    text-decoration: none; /* Remove sublinhado */
+}
+
+/* Remove marcadores da lista no header */
+header nav ul{
+    list-style-type: none;
+}
+
+/* Itens da lista alinhados horizontalmente */
+header nav ul li{
+    display: inline-block;
+    margin-right: 20px;
+    padding: 0 40px;
+}
+
+/* Botão de contato com estilo e hover */
+header .btn-contato button{
+    background: transparent; /* Fundo transparente */
+    padding: 5px 40px;
+    border: 1px solid var(--search-text);
+    color: var(--search-text);
+    border-radius: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+/* Efeito hover do botão contato */
+header .btn-contato button:hover{
+    box-shadow: 0px 0px 8px #1fbbb8fa; /* Sombra suave */
+    background: var(--search-text);
+    color: #fff;
+    transition: 0.5s all; /* Transição suave */
+}
+
+/* Título principal com cor, tamanho e alinhamento */
+h2.title{
+    color: var(--text-color);
+    font-size: 34px;
+    text-align: center;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+    height: 680px;
+    width: 100%;
+}
+
+/* Destaque dentro do título */
+h2.title span{
+    color: var(--sid-nav);
+    font-size: 34px;
+    text-align: center;
+    font-weight: 500;
+    margin: 0;
+    padding: 0 0 4px;
+    height: 680px;
+}
+
+/* Lista de navegação com espaçamento e estilo */
+.nav-links{
+    list-style: none;
+    display: flex;
+    gap: 3rem;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+/* Links da navegação com cor e tamanho */
+.nav-links a{
+    color: #fff;
+    font-size: 12px;
+}
+
+/* Efeito hover nos links da navegação */
+.nav-links a :hover{
+    color: var(--search-text);
+    transition: 0.3s all;
+}
+
+/* Estilo do logo com borda arredondada */
+.logo{
+    height: 40px;
+    width: 40px;
+    background: transparent;
+    border: 1px solid var(--search-text);
+    color: var(--search-text);
+    border-radius: 60%;
+    display:inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    cursor: pointer;
+} 
+
+/* Hover no logo com sombra e mudança de cor */
+.logo:hover{
+    box-shadow: 0px 0px 8px #1fbbb8fa;
+    background: var(--search-text);
+    color: #fff;
+    transition: 0.5s all;
+}
+
+/* Hover para botões na seção topo do site */
+.topo-do-site button :hover{
+    box-shadow: 0px 0px 8px var(--search-text);
+}
+
+/* Estilos gerais do rodapé fixo */
+footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--nav-color);
+    color: var(--text-color);
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+    z-index: 1000; /* Sempre acima de outros elementos */
+}
+
+/* Container para textos com padding superior e lateral */
+.container-text{
+    padding: 150px 0 0 130px;
+}
+
+/* Botão de pesquisa na navbar */
+
+/* Estilo do botão da barra de pesquisa */
+nav .nav-primary .search-bar button {
+    height: 40px;
+    border-radius: 20px; /* Bordas arredondadas */
+    border: none;
+    margin-left: 10px;
+    padding: 0 20px;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--text-color);
+    background-color: var(--body-color);
+    transition: background 0.3s;
+}
+
+/* Efeito hover do botão de pesquisa */
+nav .nav-primary .search-bar button:hover {
+    background-color: var(--search-text);
+    color: #fff;
+}
+
+/* Estilo do input da barra de pesquisa */
+nav .nav-primary .search-bar input {
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    padding: 0 20px;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-color);
+    background-color: var(--search-bar);
+}
+
+/* Placeholder do input da barra de pesquisa */
+nav .nav-primary .search-bar input::placeholder {
+    color: var(--text-color);
+}
+
+/* Estilização do topo da página */
+section.topo-do-site{
+    padding: 60px 4%;
+}
+
+/* Flex container na seção topo para alinhamento e espaçamento */
+section.topo-do-site .flex{
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding: 60px 0;
+}
+
+/* Estilos para textos dentro da seção topo */
+.text h3{
+    color: var(--text-color);
+    font-size: 23px;
+    line-height: 20px;
+    margin-top: 80px;
+}
+.text h1{
+    color: var(--text-color);
+    margin-top: 5px;
+    font-size: 2.3rem;
+}
+.text h1 span{
+    color: var(--search-text);
+}
+.text p{
+    color: var(--text-color);
+    margin: 5px;
+    margin-top: 5px;
+}
+.text p span{
+    color: var(--text-color);
+    font-size: 19px;
+}
+
+/* Interface flexível para elementos alinhados */
+.interface{
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+}
+.interface span{
+    color: var(--search-text);
+    font-size: 20px;
+    font-weight: 500;
+    margin-left: 5px;
+    align-items: center;
+}
+
+/* Seção projetos */
+section .projetos{
+    padding: 40px 4%;
+}
+
+/* Flex container para projetos */
+section .projetos .flex{
+    gap: 60px;
+}
+
+/* Caixa de cada projeto */
+.projetos .projetos-box{
+    color: var(--text-color);
+    padding: 20px;
+    border-radius: 20px;
+    margin-top: 45px;
+    margin: 20px;
+    transition: 1.2s; /* Animação suave */
+}
+
+/* Ícone dentro da caixa de projeto */
+.projetos .projetos-box i{
+    font-size:70px;
+    color: var(--sid-nav);
+    padding: 40px;
+}
+
+/* Título do projeto */
+.projetos .projetos-box h3{
+    font-size: 28px;
+    margin: 15px 10px;
+}
+
+/* Efeito hover nas caixas dos projetos */
+.projetos .projetos-box:hover{
+    transform: scale(1.05); /* Aumenta levemente */
+    box-shadow: 0 0 20px #ffffffe0; /* Sombra brilhante */
+}
+
+/* Título da interface dos projetos */
+.interface .title h2{
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+/* Destaque no título da interface */
+.interface .title span {
+    color: var(--search-text);
+    font-size: 2.2rem;
+    font-weight: 600;
+}
+/* Imagem do sobre */
+section.Sobre .img-sobre {
+    position: relative; /* Posicionamento relativo */
+    width: 750px; /* Largura fixa */
+    height: 520px; /* Altura fixa */
+    max-width: 100%; /* Responsivo, não ultrapassa 100% */
+    display: flex;
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    padding: 0;
+    margin: 0;
+    background: transparent; /* Fundo transparente */
+    border: none;
+    z-index: 1; /* Fica acima de outros elementos */
+}
+
+/* Estilização da imagem dentro da seção topo */
+section.Sobre .img-sobre img {
+    width: 100%; /* Largura total do container */
+    height: 100%; /* Altura total do container */
+    object-fit: cover; /* Cobre todo o espaço mantendo proporção */
+    border-radius: 10px; /* Cantos arredondados */
+    display: block; /* Remove espaços em branco abaixo da imagem */
+}
+/* estilo sobre */
+section .Sobre{
+    padding: 40px 4%;
+}
+section .Sobre .flex{
+    gap: 60px;
+    align-items: center;
+    justify-content: center;
+}
+.Sobre .txt-sobre{
+    color: var(--text-color);
+}
+.Sobre .txt-sobre h2{
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.Sobre .txt-sobre h2 span{
+    color: var(--sid-nav);
+    display: block;
+    font-size: 40px;
+    font-weight: 500;
+    font-family: poppins, sans-serif;
+}
