@@ -90,12 +90,12 @@ nav .nav-primary li a{
 section.topo-do-site .img {
     position: relative; /* Posicionamento relativo */
     width: 350px; /* Largura fixa */
-    height: 520px; /* Altura fixa */
+    height: 650px; /* Altura fixa */
     max-width: 100%; /* Responsivo, não ultrapassa 100% */
     display: flex;
     align-items: center; /* Centraliza verticalmente */
     justify-content: center; /* Centraliza horizontalmente */
-    padding: 0;
+    padding: 0 ;
     margin: 0;
     background: transparent; /* Fundo transparente */
     border: none;
@@ -109,6 +109,7 @@ section.topo-do-site .img img {
     object-fit: cover; /* Cobre todo o espaço mantendo proporção */
     border-radius: 10px; /* Cantos arredondados */
     display: block; /* Remove espaços em branco abaixo da imagem */
+    padding: 30px; /* Espaçamento interno */
 }
 
 /* Estilo dos itens da lista dentro da navbar */
@@ -238,36 +239,37 @@ header .btn-contato button{
 }
 
 /* Efeito hover do botão contato */
-header .btn-contato button:hover{
-    box-shadow: 0px 0px 8px #1fbbb8fa; /* Sombra suave */
-    background: var(--search-text);
-    color: #fff;
-    transition: 0.5s all; /* Transição suave */
-}
+
 
 /* Título principal com cor, tamanho e alinhamento */
-h2.title{
+h2.title {
     color: var(--text-color);
     font-size: 34px;
     text-align: center;
     font-weight: 600;
     margin: 0;
-    padding: 0;
-    height: 680px;
-    width: 100%;
+    padding: 10px 30px;
+    display: block;         /* Garante centralização */
+    white-space: normal;    /* Permite texto em linha única */
 }
-
 /* Destaque dentro do título */
-h2.title span{
+h2.title span {
     color: var(--sid-nav);
     font-size: 34px;
     text-align: center;
     font-weight: 500;
     margin: 0;
     padding: 0 0 4px;
-    height: 680px;
+    display: inline;        /* Mantém na mesma linha */
+    height: auto;           /* Remove altura fixa */
 }
-
+button:hover{
+    box-shadow: 0px 0px 8px var(--sid-nav); /* Sombra suave */
+    background: var(--search-text);
+    color: #fff;
+    transition: 0.5s all; /* Transição suave */
+    transform: scale(1.05); /* Leve aumento de tamanho */
+}
 /* Lista de navegação com espaçamento e estilo */
 .nav-links{
     list-style: none;
@@ -384,7 +386,10 @@ section.topo-do-site{
 section.topo-do-site .flex{
     align-items: center;
     justify-content: center;
-    gap: 40px;
+    gap: 40px; /* Espaçamento entre itens */
+    flex-wrap: wrap; /* Permite quebra de linha */
+    max-width: 1200px; /* Largura máxima do container */
+    margin: 0 auto; /* Centraliza horizontalmente */
     padding: 60px 0;
 }
 
@@ -426,10 +431,87 @@ section.topo-do-site .flex{
     margin-left: 5px;
     align-items: center;
 }
+/* estilo sobre */
+section .sobre{
+    padding: 80px 4%;
+    padding-top: 110px; /* ajuste conforme a altura do seu header/nav */
+    padding-bottom: 40px;
+    padding-left: 4%;
+    padding-right: 4%;
+}
+/* Cabeçalho/nav com z-index alto */
+nav, header {
+    z-index: 100;
+}
 
+/* Imagem do sobre */
+section.sobre .img-sobre{
+    position: sticky; /* Fixa a imagem na tela */
+    top: 70px; /* altura exata do seu nav/header */
+    width: 750px; /* Largura fixa */
+    height: 420px; /* Altura fixa */
+    max-width: 100%; /* Responsivo, não ultrapassa 100% */
+    display: flex; 
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    padding: 10px;
+    margin: 0;
+    background: transparent;
+    border: none;
+    z-index: 10; /* Fica abaixo do header/nav */
+}
+
+/* Estilização da imagem dentro da seção sobre */
+section.sobre .img-sobre img {
+    width: 100%; /* Largura total do container */
+    height: 0 90%; /* Altura total do container */
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+    box-shadow: 0 0 20px #ffffff49;
+    padding: 5px;
+}
+section.sobre .flex{
+    gap: 60px;
+    align-items: center;
+    justify-content: center;
+}
+.sobre .txt-sobre{
+    color: var(--text-color);
+}
+.sobre .txt-sobre h2{
+    font-size: 40px;
+    line-height: 40px;
+    margin-bottom: 30px;
+}
+.sobre .txt-sobre h2 span{
+    color: var(--sid-nav);
+    display: block;
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.sobre .txt-sobre p{
+    margin: 20px 0;
+    text-align: justify;
+}
+.sobre .txt-sobre .btn-social button{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--sid-nav);
+    font-size: 23px;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: 0.2s;
+}
 /* Seção projetos */
-section .projetos{
-    padding: 40px 4%;
+section.projetos{
+    padding: 80px 4%;
+    margin-top: 0px; /* Remove margem superior */
+    padding-top: 110px; /* Ajuste conforme a altura do seu header/nav */
+    padding-bottom: 40px;
 }
 
 /* Flex container para projetos */
@@ -463,71 +545,59 @@ section .projetos .flex{
 /* Efeito hover nas caixas dos projetos */
 .projetos .projetos-box:hover{
     transform: scale(1.05); /* Aumenta levemente */
-    box-shadow: 0 0 20px #ffffffe0; /* Sombra brilhante */
+    box-shadow: 0 0 20px #ffffffd3; /* Sombra brilhante */
 }
 
 /* Título da interface dos projetos */
-.interface .title h2{
-    display: block;
-    width: 100%;
+.interface .title {
+    margin-top: 0;       /* Remove espaço acima do título */
+    margin-bottom: 0;    /* Ajuste se quiser menos espaço abaixo */
+}
+
+.interface .title h2 {
+    display: inline-block;   /* Fica reto e centralizado */
+    width: auto;             /* Não força largura total */
+    white-space: nowrap;     /* Impede quebra de linha */
     text-align: center;
     margin-bottom: 30px;
     font-size: 2.2rem;
     font-weight: 600;
     color: var(--text-color);
 }
-
 /* Destaque no título da interface */
 .interface .title span {
+    display: inline;         /* Garante que fique na mesma linha */
     color: var(--search-text);
     font-size: 2.2rem;
     font-weight: 600;
-}
-/* Imagem do sobre */
-section.Sobre .img-sobre {
-    position: relative; /* Posicionamento relativo */
-    width: 750px; /* Largura fixa */
-    height: 520px; /* Altura fixa */
-    max-width: 100%; /* Responsivo, não ultrapassa 100% */
-    display: flex;
-    align-items: center; /* Centraliza verticalmente */
-    justify-content: center; /* Centraliza horizontalmente */
-    padding: 0;
     margin: 0;
-    background: transparent; /* Fundo transparente */
+    padding: 0;
+}
+    /* Adicione ao final do arquivo ou personalize para cada seção */
+section {
+    box-shadow: 0 -8px 16px -8px #3436b879 inset; /* Sombra interna */
+    border-top: 2px solid #f8fafa25; /* Cor da linha divisória */
+    margin-top: 60px;              /* Espaço antes da linha */
+    padding-top: 40px;             /* Espaço após a linha */
+}
+section:first-of-type {
+    border-top: none; /* Remove a linha da primeira seção */
+    margin-top: 0;
+}
+section {
+    box-shadow: 0 -8px 16px -8px #3436b879 inset;
+    margin-top: 60px;
+    padding-top: 40px;
+}
+section:first-of-type {
+    box-shadow: none;
+    margin-top: 0;
+}
+hr.divisor {
     border: none;
-    z-index: 1; /* Fica acima de outros elementos */
-}
-
-/* Estilização da imagem dentro da seção topo */
-section.Sobre .img-sobre img {
-    width: 100%; /* Largura total do container */
-    height: 100%; /* Altura total do container */
-    object-fit: cover; /* Cobre todo o espaço mantendo proporção */
-    border-radius: 10px; /* Cantos arredondados */
-    display: block; /* Remove espaços em branco abaixo da imagem */
-}
-/* estilo sobre */
-section .Sobre{
-    padding: 40px 4%;
-}
-section .Sobre .flex{
-    gap: 60px;
-    align-items: center;
-    justify-content: center;
-}
-.Sobre .txt-sobre{
-    color: var(--text-color);
-}
-.Sobre .txt-sobre h2{
-    font-size: 40px;
-    font-weight: 600;
-    margin-bottom: 20px;
-}
-.Sobre .txt-sobre h2 span{
-    color: var(--sid-nav);
-    display: block;
-    font-size: 40px;
-    font-weight: 500;
-    font-family: poppins, sans-serif;
+    box-shadow: 0 -8px 16px -8px #3436b879 inset;
+    margin: 60px 0 40px 0;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
 }
