@@ -26,7 +26,7 @@ nav{
     position: fixed; /* Fixa no topo da página */
     top:0;
     left:0;
-    height:70px; /* Altura da navbar */
+    height:60px; /* Altura da navbar */
     background-color: var(--search-bar); /* Cor de fundo da navbar */
     width: 100%; /* Largura total */
 }
@@ -35,20 +35,20 @@ nav{
 .menu {
     display: flex; /* Itens alinhados em linha */
     align-items: center; /* Centraliza verticalmente */
-    gap: 2rem; /* Espaçamento entre itens */
+    gap: 5px; /* Espaçamento entre itens */
 }
 
 /* Lista de links dentro do menu */
 .menu .nav-links {
     display: flex; /* Alinha os links horizontalmente */
-    gap: 2rem; /* Espaçamento entre links */
+    gap: 5px; /* Espaçamento entre links */
     margin: 0;
     padding: 0;
 }
 
 /* Botão contato com margem à esquerda */
 .menu .btn-contato {
-    margin-left: 1rem;
+    margin-left: 5px; /* Espaço à esquerda do botão */
 }
 
 /* Estilização principal da navbar */
@@ -64,13 +64,12 @@ nav .nav-primary{
     display: flex; /* Flexbox para distribuir itens */
     align-items: center; /* Alinhamento vertical */
     justify-content: space-between; /* Espaço máximo entre elementos */
-    gap: 10px; /* Espaçamento entre itens */
+    gap: 2px; /* Espaçamento entre itens */
 }    
 
 /* Links da navbar */
 nav .nav-primary li a{
     padding:10px; /* Espaçamento interno */
-    background-color: rgb(6, 8, 104); /* Cor de fundo dos links */
     font-size: 1.2rem; /* Tamanho da fonte */
 }
 
@@ -158,7 +157,7 @@ nav .nav-primary .logo a{
 
 /* Classe flex para display flex */
 .flex{
-    display: flex;
+    display:flex; 
 }
 
 /* Declaração das cores padrão em variáveis CSS */
@@ -183,7 +182,6 @@ nav .nav-primary .logo a{
 
 /* Cabeçalho estilizado com cor e espaçamento */
 header{
-    background-color: var(--nav-color);
     justify-content: space-around; /* Espaçamento entre itens */
     padding: 50px;
     text-align: center;
@@ -201,7 +199,6 @@ header > .nav-primary{
     max-width: 1280px;
     margin: 0 auto; 
     padding: 0 30px; /* Espaçamento interno horizontal */
-    background-color: var(--nav-color);
     margin-top: 100px; /* Distância do topo */
 }
 
@@ -238,18 +235,19 @@ header .btn-contato button{
     cursor: pointer;
 }
 
-/* Efeito hover do botão contato */
-
-
 /* Título principal com cor, tamanho e alinhamento */
 h2.title {
     color: var(--text-color);
     font-size: 34px;
     text-align: center;
     font-weight: 600;
-    margin: 0;
-    padding: 10px 30px;
-    display: block;         /* Garante centralização */
+    margin: 20px 0;
+    padding: 10px 30px; /* Espaçamento interno */
+    display: inline; /* Fica na mesma linha */
+    width: auto; /* Não força largura total */
+    white-space: nowrap; /* Impede quebra de linha */
+    height: auto; /* Remove altura fixa */
+    line-height: 1.5; /* Espaçamento entre linhas */
     white-space: normal;    /* Permite texto em linha única */
 }
 /* Destaque dentro do título */
@@ -258,12 +256,13 @@ h2.title span {
     font-size: 34px;
     text-align: center;
     font-weight: 500;
-    margin: 0;
+    margin: 20px 0;
     padding: 0 0 4px;
-    display: inline;        /* Mantém na mesma linha */
+    display: inline-flex; /* Fica na mesma linha */
+    white-space: nowrap; /* Impede quebra de linha */
     height: auto;           /* Remove altura fixa */
 }
-button:hover{
+button:hover, form .btn-enviar input:hover{
     box-shadow: 0px 0px 8px var(--sid-nav); /* Sombra suave */
     background: var(--search-text);
     color: #fff;
@@ -319,25 +318,13 @@ button:hover{
     box-shadow: 0px 0px 8px var(--search-text);
 }
 
-/* Estilos gerais do rodapé fixo */
-footer{
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: var(--nav-color);
-    color: var(--text-color);
-    text-align: center;
-    padding: 10px 0;
-    font-size: 14px;
-    z-index: 1000; /* Sempre acima de outros elementos */
-}
-
 /* Container para textos com padding superior e lateral */
 .container-text{
     padding: 150px 0 0 130px;
 }
-
+.seletor {
+  display: flex;
+}
 /* Botão de pesquisa na navbar */
 
 /* Estilo do botão da barra de pesquisa */
@@ -495,7 +482,7 @@ section.sobre .flex{
     margin: 20px 0;
     text-align: justify;
 }
-.sobre .txt-sobre .btn-social button{
+.btn-social button{
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -554,7 +541,7 @@ section .projetos .flex{
     margin-bottom: 0;    /* Ajuste se quiser menos espaço abaixo */
 }
 
-.interface .title h2 {
+.interface h2 {
     display: inline-block;   /* Fica reto e centralizado */
     width: auto;             /* Não força largura total */
     white-space: nowrap;     /* Impede quebra de linha */
@@ -563,15 +550,220 @@ section .projetos .flex{
     font-size: 2.2rem;
     font-weight: 600;
     color: var(--text-color);
+    margin: 0 auto; /* Centraliza horizontalmente */
 }
 /* Destaque no título da interface */
-.interface .title span {
+.interface span {
     display: inline;         /* Garante que fique na mesma linha */
     color: var(--search-text);
     font-size: 2.2rem;
     font-weight: 600;
     margin: 0;
+    padding: 5px;
+    margin: 0 auto; /* Centraliza horizontalmente */
+}
+/* Sessão habilidades */
+.habilidades h2{
+    display: inline-block;   /* Fica reto e centralizado */
+    width: auto;             /* Não força largura total */
+    white-space: nowrap;     /* Impede quebra de linha */
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.2rem;
+    padding: 0 1%;
+    font-weight: 600;
+    color: var(--text-color);
+    margin: 5px auto; /* Centraliza horizontalmente */
+    margin-top: 5%;       /* Remove espaço acima do título */
+}
+.habilidades span{
+    display: inline;         /* Garante que fique na mesma linha */
+    color: var(--search-text);
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin: 0;
+    padding: 30px 0;
+    margin: 0 auto; /* Centraliza horizontalmente */
+}
+.habilidades {
+    width: 500px;
+    padding: 0 50px;
+    border-radius: 20px;
+    margin: 0 auto; /* Corrige 'margin: center' para centralizar */
+    background-color: var(--nav-color);
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.199);
+    font-size: large;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza o conteúdo interno */
+}
+
+.habilidades h3 {
+    color: var(--text-color);
+    padding: 3.5px;
+    text-align: center;
+}
+
+.habilidades ul {
     padding: 0;
+    margin: 0;
+    width: 100%;
+    list-style: none;
+}
+
+.habilidades ul li {
+    margin: 20px 0;
+    padding: 0;
+}
+
+.habilidades .barras {
+    background-color: #ccc; /* Fundo branco visível */
+    height: 10px; /* Altura total da barra (menos exagerada) */
+    border-radius: 20px;
+    display: block;
+    padding: 4% 0;
+    position: relative;
+    overflow: hidden;
+    transition: .5s ease-in-out;
+}
+
+/* Barra preenchida */
+.barras > span {
+    height: 10px;
+    padding: 10% 0;
+    margin-top: -20px;
+    background: linear-gradient(to right, #2B3333,#30918F);
+    position: absolute;
+}
+.html{
+    width:40.9%;
+    animation: html 3s;
+}
+.css{
+    width:40%;
+    animation: css 3s;
+}
+.python{
+    width:70%;
+    animation: python 3s;
+}
+.java{
+    width:30%;
+    animation: java 3s;
+}
+.redes{
+    width:50%;
+    animation: redes 3s;
+}
+@keyframes html {
+    0%{
+        width:0%;
+    }
+    100%{
+        width: 40.9%;
+    }
+}
+@keyframes css {
+    0%{
+        width:0%;
+    }
+    100%{
+        width: 40%;
+    }
+}
+@keyframes python {
+    0%{
+        width:0%;
+    }
+    100%{
+        width: 70%;
+    }
+}
+@keyframes java {
+    0%{
+        width:0%;
+    }
+    100%{
+        width: 30%;
+    }
+}
+@keyframes redes {
+    0%{
+        width:0%;
+    }
+    100%{
+        width: 50%;
+    }
+}
+
+/* estilo curiosidades */
+/* estilo contato */
+section.contato{
+    padding: 80px 4%;
+}
+form{
+    max-width: 500px; /* Largura máxima do formulário */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    display: flex; /* Flexbox para alinhar itens */
+    justify-content: center; /* Centraliza horizontalmente */
+    flex-direction: column; /* Alinha itens verticalmente */
+    gap: 10px; /* Espaçamento entre os campos */
+    margin-top: 40px;
+}
+form input, form textarea{
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.212);
+    border:0;
+    outline: 0;
+    padding: 20px 15px;
+    border-radius: 15px; /* Bordas arredondadas */
+    color: var(--text-color); /* Cor do texto */
+    font-size: 18px; /* Tamanho da fonte */
+}
+form textarea{
+    resize: none; /* Impede redimensionamento */
+    max-height: 160px; /* Altura fixa */
+}
+form .btn-enviar{
+    margin-top: 20px; /* Espaço acima do botão */
+    color: var(--text-color); /* Cor do texto do botão */
+    font-weight: 700; /* Peso da fonte */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+}
+form .btn-enviar input{
+    width: 120px; /* Largura do botão */
+    text-align: center; /* Centraliza o texto */
+}
+
+
+/* Estilos gerais do rodapé fixo */
+footer{
+    padding: 40px 4%;
+    box-shadow: 0 0 40px 10px #3436b879;
+}
+footer .flex {
+   display: flex;
+   justify-content: flex-end; /* Alinha o conteúdo para a direita */
+   align-items: center;
+}
+.line-footer .flex {
+    justify-content: flex-end;
+}
+footer .line-footer p i{
+    color: var(--sid-nav);
+    padding: 0 10px;
+}
+footer .line-footer p a{
+    color: var(--text-color);
+}
+footer .line-footer p{
+    padding: 0 20px;
+}
+.flex {
+   width: 100%;
+}
+footer .line-footer{
+    padding: 20px 0;
 }
     /* Adicione ao final do arquivo ou personalize para cada seção */
 section {
