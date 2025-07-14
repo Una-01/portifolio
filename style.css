@@ -451,7 +451,7 @@ section.sobre .img-sobre{
 /* Estilização da imagem dentro da seção sobre */
 section.sobre .img-sobre img {
     width: 100%; /* Largura total do container */
-    height: 0 90%; /* Altura total do container */
+    height: 90%; 
     object-fit: cover;
     border-radius: 10px;
     display: block;
@@ -697,6 +697,68 @@ section .projetos .flex{
 }
 
 /* estilo curiosidades */
+section .curiosidades{
+    padding: 80px 4%;
+    margin-top: 0px; /* Remove margem superior */
+    padding-top: 110px; /* Ajuste conforme a altura do seu header/nav */
+    padding-bottom: 40px;
+}
+section .curiosidades .flex{
+    gap: 60px;
+}
+
+/* Caixa de cada projeto */
+.curiosidades .curiosidades-box{
+    color: var(--text-color);
+    padding: 20px;
+    border-radius: 20px;
+    margin-top: 45px;
+    margin: 20px;
+    transition: 1.2s; /* Animação suave */
+}
+
+/* Ícone dentro da caixa de projeto */
+.curiosidades .curiosidades-box i{
+    font-size:70px;
+    color: var(--sid-nav);
+    padding: 40px;
+}
+
+/* Título do projeto */
+.curiosidades .curiosidades-box h3{
+    font-size: 28px;
+    margin: 15px 10px;
+}
+
+/* Efeito hover nas caixas dos projetos */
+.curiosidades .curiosidades-box:hover{
+    transform: scale(1.05); /* Aumenta levemente */
+    box-shadow: 0 0 20px #ffffffd3; /* Sombra brilhante */
+}
+.txt-curiosidades h2 {
+    display: inline-block;   /* Fica reto e centralizado */
+    width: auto;             /* Não força largura total */
+    white-space: nowrap;     /* Impede quebra de linha */
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: var(--text-color);
+    padding: 0 20px;
+}
+/* Destaque no título da interface */
+.txt-curiosidades span {
+    display: inline;         /* Garante que fique na mesma linha */
+    color: var(--search-text);
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin: 0;
+    padding: 5px;
+    margin: 0 auto; /* Centraliza horizontalmente */
+}
+.txt-curiosidades p{
+    padding: 5px 20px;
+}
 /* estilo contato */
 section.contato{
     padding: 80px 4%;
@@ -792,4 +854,133 @@ hr.divisor {
     width: 80%;
     margin-left: auto;
     margin-right: auto;
+}
+@media screen and (max-width: 1020px){
+    
+    /* cabeçalho */
+    .menu-desktop, .btn-contato{
+        display:none;
+    }
+    .flex{
+        flex-direction: column;
+    }
+    .topo-do-site .flex{
+        flex-direction: column-reverse;
+    }
+
+    
+    /* topo do site */
+    .text h1{
+        font-size: 30px;
+    }
+    section.topo-do-site{
+        padding: 20px 8%;
+    }
+    section.topo-do-site .img {
+        width: 80%;
+        height: auto;
+        margin-right: 20px; /* afasta a imagem da borda direita */
+        max-width: 100%;
+        display: block;
+    }
+    section.topo-do-site .flex{
+        gap:40px;
+    }
+    /* projetos */
+    section.projetos{
+        padding: 40px 8%;
+    }
+    h2.title {
+        padding: 5px;
+        font-size: 34px;
+        line-height: 30px; /* Espaçamento entre linhas */
+    }
+    /* Ícone dentro da caixa de projeto */
+    .projetos .projetos-box i{
+        font-size:38px;
+        padding: 40px 0;
+    }
+
+    /* Título do projeto */
+    .projetos .projetos-box h3{
+        font-size: 28px;
+        margin: 10px 0.5px;
+    }
+    .projetos .projetos-box p{
+        font-size: 15px;
+    }
+    /* sobre */
+    section.sobre{
+        padding: 80px 8%;
+    }
+    .sobre .flex{
+        flex-direction: column-reverse;
+    }
+    /* Estilização da imagem dentro da seção sobre */
+    section.sobre .img-sobre img {
+        width: 90%; /* Largura total do container */
+        height: 100%; 
+        object-fit: cover;
+        border-radius: 10px;
+        display: block;
+        padding: 5px;
+    }
+    .sobre .txt-sobre h2{
+        font-size: 34px;
+        line-height: 35px;
+        text-align: center
+    }
+    .btn-social{
+        text-align: center;
+    }
+    .sobre .txt-sobre p{
+        margin: 20px 0;
+        padding: 3px 5px;
+        text-align: justify;
+    }
+    /* habilidades */
+    .habilidades {
+        width: 320px;
+        padding: 5px 50px;
+        display: flex;
+    }
+    .habilidades h2{
+        font-size: 23px;
+    }
+    .habilidades span{
+        font-size: 23px;
+    }
+    section.projetos{
+        padding: 40px 8%;
+    }
+    h2.title {
+        padding: 5px;
+        font-size: 34px;
+        line-height: 30px; /* Espaçamento entre linhas */
+    }
+    /* curiosidades */
+    .curiosidades .curiosidades-box i{
+        font-size:38px;
+        padding: 40px 10px;
+    }
+
+    /* Título do projeto */
+    .curiosidades .curiosidades-box h3{
+        font-size: 24px;
+        margin: 10px 0.5px;
+    }
+    .curiosidades .curiosidades-box p{
+        font-size: 15px;
+    }
+    /* contato */
+    section.contato{
+        text-align: center;
+    }
+    /* rodapé */
+    footer .flex{
+        flex-direction: column;
+    }
+    footer .line-footer{
+        text-align: center;
+    }
 }
