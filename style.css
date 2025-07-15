@@ -79,6 +79,7 @@ nav .nav-primary li a{
     align-items: center; /* Centraliza verticalmente */
 }
 
+
 /* Efeito hover nos links */
 .nav-primary .nav-links li a:hover{
     color: var(--search-text); /* Cor ao passar o mouse */
@@ -91,7 +92,7 @@ section.topo-do-site .img {
     width: 350px; /* Largura fixa */
     height: 650px; /* Altura fixa */
     max-width: 100%; /* Responsivo, não ultrapassa 100% */
-    display: flex;
+    display: flex; 
     align-items: center; /* Centraliza verticalmente */
     justify-content: center; /* Centraliza horizontalmente */
     padding: 0 ;
@@ -162,7 +163,7 @@ nav .nav-primary .logo a{
 
 /* Declaração das cores padrão em variáveis CSS */
 :root{
-    --body-color: #2B3333;
+    --body-color: #1d2020;
     --nav-color: #0b0c64;
     --sid-nav: #30918F;
     --text-color: #ffffff;
@@ -234,6 +235,88 @@ header .btn-contato button{
     font-weight: 500;
     cursor: pointer;
 }
+/* estilo menu mobile */
+#menu-toggle {
+    display: none;
+}
+
+/* Estilo do botão abrir */
+.btn-abrir-menu i {
+    color: var(--search-text);
+    font-size: 40px;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+/* Estilo menu mobile fechado */
+.menu-mobile {
+    background-color: var(--search-bar);
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 9999;
+    width: 0;
+    overflow: hidden;
+    transition: 0.4s ease;
+}
+
+/* Estilo quando o menu está visível */
+#menu-toggle:checked ~ .menu-mobile {
+    width: 20%;
+}
+
+/* Estilo botão fechar */
+.menu-mobile .btn-fechar {
+    padding: 20px 5%;
+    cursor: pointer;
+}
+
+.menu-mobile .btn-fechar i {
+    color: #1FBBB8;
+    font-size: 30px;
+    margin-right: 100%;
+}
+
+/* Lista de links */
+.menu-mobile ul {
+    text-align: right;
+}
+
+.menu-mobile ul li a {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 300;
+    padding: 20px 5%;
+    height: -10px; /* Altura total da barra (menos exagerada) */
+    border-radius: 20px;
+    width: 90px;
+    display: block;
+}
+
+.menu-mobile ul li a:hover {
+    color: var(--search-text); /* Cor ao passar o mouse */
+    transition: 0.3s all; /* Transição suave */
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6); /* Fundo escuro com transparência */
+    z-index: 9990;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.4s ease;
+}
+
+/* Ativa o fundo escuro quando o menu está aberto */
+#menu-toggle:checked ~ .overlay {
+    opacity: 1;
+    pointer-events: all;
+}
+
 
 /* Título principal com cor, tamanho e alinhamento */
 h2.title {
@@ -856,131 +939,140 @@ hr.divisor {
     margin-right: auto;
 }
 @media screen and (max-width: 1020px){
-    
-    /* cabeçalho */
-    .menu-desktop, .btn-contato{
-        display:none;
-    }
-    .flex{
+
+    .flex {
         flex-direction: column;
     }
-    .topo-do-site .flex{
+
+    .topo-do-site .flex {
         flex-direction: column-reverse;
+        gap: 40px;
     }
 
-    
+    /* cabeçalho */
+    .menu, .btn-contato {
+        display: none;
+    }
+
     /* topo do site */
-    .text h1{
+    .text h1 {
         font-size: 30px;
     }
-    section.topo-do-site{
+
+    section.topo-do-site {
         padding: 20px 8%;
     }
+
     section.topo-do-site .img {
-        width: 80%;
+        width: 90%;
         height: auto;
-        margin-right: 20px; /* afasta a imagem da borda direita */
+        margin: 0 auto;
         max-width: 100%;
         display: block;
+        border-radius: 10px;
     }
-    section.topo-do-site .flex{
-        gap:40px;
-    }
+
     /* projetos */
-    section.projetos{
+    section.projetos {
         padding: 40px 8%;
     }
+
     h2.title {
         padding: 5px;
         font-size: 34px;
-        line-height: 30px; /* Espaçamento entre linhas */
+        line-height: 30px;
     }
-    /* Ícone dentro da caixa de projeto */
-    .projetos .projetos-box i{
-        font-size:38px;
+
+    .projetos .projetos-box i {
+        font-size: 38px;
         padding: 40px 0;
     }
 
-    /* Título do projeto */
-    .projetos .projetos-box h3{
+    .projetos .projetos-box h3 {
         font-size: 28px;
         margin: 10px 0.5px;
     }
-    .projetos .projetos-box p{
+
+    .projetos .projetos-box p {
         font-size: 15px;
     }
+
     /* sobre */
-    section.sobre{
+    section.sobre {
         padding: 80px 8%;
     }
-    .sobre .flex{
+
+    .sobre .flex {
         flex-direction: column-reverse;
     }
-    /* Estilização da imagem dentro da seção sobre */
+
     section.sobre .img-sobre img {
-        width: 90%; /* Largura total do container */
-        height: 100%; 
+        width: 90%;
+        height: 100%;
         object-fit: cover;
         border-radius: 10px;
         display: block;
         padding: 5px;
+        margin: 0 auto;
     }
-    .sobre .txt-sobre h2{
+
+    .sobre .txt-sobre h2 {
         font-size: 34px;
         line-height: 35px;
-        text-align: center
-    }
-    .btn-social{
         text-align: center;
     }
-    .sobre .txt-sobre p{
+
+    .btn-social {
+        text-align: center;
+    }
+
+    .sobre .txt-sobre p {
         margin: 20px 0;
         padding: 3px 5px;
         text-align: justify;
     }
+
     /* habilidades */
     .habilidades {
         width: 320px;
         padding: 5px 50px;
         display: flex;
     }
-    .habilidades h2{
+
+    .habilidades h2 {
         font-size: 23px;
     }
-    .habilidades span{
+
+    .habilidades span {
         font-size: 23px;
     }
-    section.projetos{
-        padding: 40px 8%;
-    }
-    h2.title {
-        padding: 5px;
-        font-size: 34px;
-        line-height: 30px; /* Espaçamento entre linhas */
-    }
+
     /* curiosidades */
-    .curiosidades .curiosidades-box i{
-        font-size:38px;
+    .curiosidades .curiosidades-box i {
+        font-size: 38px;
         padding: 40px 10px;
     }
 
-    /* Título do projeto */
-    .curiosidades .curiosidades-box h3{
+    .curiosidades .curiosidades-box h3 {
         font-size: 24px;
         margin: 10px 0.5px;
     }
-    .curiosidades .curiosidades-box p{
+
+    .curiosidades .curiosidades-box p {
         font-size: 15px;
     }
+
     /* contato */
-    section.contato{
+    section.contato {
         text-align: center;
     }
+
     /* rodapé */
-    footer .flex{
+    footer .flex {
         flex-direction: column;
     }
-    footer .line-footer{
+
+    footer .line-footer {
         text-align: center;
     }
 }
