@@ -1,134 +1,117 @@
-/* Importa a fonte Poppins do Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
-/* Reseta margens, paddings, e define fonte padrão para todos os elementos */
 *{
-    font-family: "poppins", sans-serif; /* Fonte padrão */
-    margin: 0; /* Remove margens */
-    padding: 0; /* Remove espaçamentos internos */
-    box-sizing: border-box; /* Facilita o cálculo de tamanhos e evita overflow */
-    text-decoration: none; /* Remove sublinhados */
-    list-style: none; /* Remove marcadores de listas */
+    font-family: "poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
 }
 
-/* Estilos do corpo da página */
 body{
-    max-width: 1200px; /* Largura máxima da página */
-    margin: 0 auto; /* Centraliza horizontalmente */
-    background-color:var(--search-bar); /* Cor de fundo definida na variável */
-    height: 100vh; /* Altura total da viewport */
-    overflow-y: auto; /* Rolagem vertical quando necessário */
-    overflow-x: hidden; /* Esconde rolagem horizontal */
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color:var(--search-bar);
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
-/* Estilização da barra de navegação fixa */
 nav{
-    position: fixed; /* Fixa no topo da página */
+    position: fixed;
     top:0;
     left:0;
-    height:60px; /* Altura da navbar */
-    background-color: var(--search-bar); /* Cor de fundo da navbar */
-    width: 100%; /* Largura total */
+    height:60px;
+    background-color: var(--search-bar);
+    width: 100%;
 }
 
-/* Container flexível para itens do menu */
 .menu {
-    display: flex; /* Itens alinhados em linha */
-    align-items: center; /* Centraliza verticalmente */
-    gap: 5px; /* Espaçamento entre itens */
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
-/* Lista de links dentro do menu */
 .menu .nav-links {
-    display: flex; /* Alinha os links horizontalmente */
-    gap: 5px; /* Espaçamento entre links */
+    display: flex;
+    gap: 5px;
     margin: 0;
     padding: 0;
 }
 
-/* Botão contato com margem à esquerda */
 .menu .btn-contato {
-    margin-left: 5px; /* Espaço à esquerda do botão */
+    margin-left: 5px;
 }
 
-/* Estilização principal da navbar */
 nav .nav-primary{
-    position: sticky; /* Fixa enquanto rola dentro do container pai */
+    position: sticky;
     top: 0;
-    height: 100%; /* Altura completa da navbar */
-    max-width: 1280px; /* Largura máxima */
-    width: 100%; /* Ocupa toda a largura disponível */
-    background-color: var(--nav-color); /* Cor de fundo */
-    margin: 0 auto; /* Centraliza o container */
-    padding: 0 30px; /* Espaçamento horizontal interno */
-    display: flex; /* Flexbox para distribuir itens */
-    align-items: center; /* Alinhamento vertical */
-    justify-content: space-between; /* Espaço máximo entre elementos */
-    gap: 2px; /* Espaçamento entre itens */
-}    
+    height: 100%;
+    max-width: 1280px;
+    width: 100%;
+    background-color: var(--nav-color);
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2px;
+}    
 
-/* Links da navbar */
 nav .nav-primary li a{
-    padding:10px; /* Espaçamento interno */
-    font-size: 1.2rem; /* Tamanho da fonte */
+    padding:10px;
+    font-size: 1.2rem;
 }
 
-/* Container flexível para os links de navegação */
 .nav-primary .nav-links{
     display:flex;
-    align-items: center; /* Centraliza verticalmente */
+    align-items: center;
 }
 
-
-/* Efeito hover nos links */
 .nav-primary .nav-links li a:hover{
-    color: var(--search-text); /* Cor ao passar o mouse */
-    transition: 0.3s all; /* Transição suave */
+    color: var(--search-text);
+    transition: 0.3s all;
 }
 
-/* Seção topo do site, imagem com posição relativa para controle */
 section.topo-do-site .img {
-    position: relative; /* Posicionamento relativo */
-    width: 350px; /* Largura fixa */
-    height: 650px; /* Altura fixa */
-    max-width: 100%; /* Responsivo, não ultrapassa 100% */
+    position: relative;
+    width: 350px;
+    height: 650px;
+    max-width: 100%;
     display: flex; 
-    align-items: center; /* Centraliza verticalmente */
-    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;
+    justify-content: center;
     padding: 0 ;
     margin: 0;
-    background: transparent; /* Fundo transparente */
+    background: transparent;
     border: none;
-    z-index: 1; /* Fica acima de outros elementos */
+    z-index: 1;
 }
 
-/* Estilização da imagem dentro da seção topo */
 section.topo-do-site .img img {
-    width: 100%; /* Largura total do container */
-    height: 100%; /* Altura total do container */
-    object-fit: cover; /* Cobre todo o espaço mantendo proporção */
-    border-radius: 10px; /* Cantos arredondados */
-    display: block; /* Remove espaços em branco abaixo da imagem */
-    padding: 30px; /* Espaçamento interno */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+    padding: 30px;
 }
 
-/* Estilo dos itens da lista dentro da navbar */
 .nav-primary .nav-links li{
-    list-style: none; /* Remove marcador */
-    margin: 0 5px; /* Margem lateral entre itens */
+    list-style: none;
+    margin: 0 5px;
 }
 
-/* Estilização geral dos links de navegação */
 .nav-links li a{
-    position:relative; /* Para efeito antes do link */
-    text-decoration: none; /* Remove sublinhado */
+    position:relative;
+    text-decoration: none;
     font-size: 17px;
     font-weight: 500;
-    color: var(--text-color); /* Cor do texto */
+    color: var(--text-color);
     padding:10px;
 }
 
-/* Estilização do logo dentro da navbar */
 nav .nav-primary .logo a{
     font-size: 25px;
     font-weight: 500;
@@ -136,7 +119,6 @@ nav .nav-primary .logo a{
     text-decoration: none;
 }
 
-/* Pequeno círculo animado abaixo do link quando hover */
 .nav-links li a::before{
     content:'';
     position: absolute;
@@ -147,21 +129,18 @@ nav .nav-primary .logo a{
     width: 6px;
     border-radius: 50%;
     background: var(--text-color);
-    opacity: 0; /* Invisível inicialmente */
-    transition: all 0.3s ease; /* Animação suave */
+    opacity: 0;
+    transition: all 0.3s ease;
 }
 
-/* Torna o círculo visível no hover */
 .nav-links li:hover a::before{
     opacity: 1;
 }
 
-/* Classe flex para display flex */
 .flex{
     display:flex; 
 }
 
-/* Declaração das cores padrão em variáveis CSS */
 :root{
     --body-color: #1d2020;
     --nav-color: #0b0c64;
@@ -171,7 +150,6 @@ nav .nav-primary .logo a{
     --search-text: #1FBBB8;
 } 
 
-/* Fundo com gradiente escuro */
 .background{
     background-color: var(--body-color);
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
@@ -181,9 +159,8 @@ nav .nav-primary .logo a{
     height: 100vh;
 }
 
-/* Cabeçalho estilizado com cor e espaçamento */
 header{
-    justify-content: space-around; /* Espaçamento entre itens */
+    justify-content: space-around;
     padding: 50px;
     text-align: center;
     padding-top: 1rem;
@@ -191,7 +168,6 @@ header{
     align-items: center;
 }
 
-/* Container do nav-primary dentro do header */
 header > .nav-primary{
     display: flex;
     align-items: center;
@@ -199,31 +175,27 @@ header > .nav-primary{
     width: 100%;
     max-width: 1280px;
     margin: 0 auto; 
-    padding: 0 30px; /* Espaçamento interno horizontal */
-    margin-top: 100px; /* Distância do topo */
+    padding: 0 30px;
+    margin-top: 100px;
 }
 
-/* Estilização dos links no header */
 header a{
     color: var(--text-color);
-    text-decoration: none; /* Remove sublinhado */
+    text-decoration: none;
 }
 
-/* Remove marcadores da lista no header */
 header nav ul{
     list-style-type: none;
 }
 
-/* Itens da lista alinhados horizontalmente */
 header nav ul li{
     display: inline-block;
     margin-right: 20px;
     padding: 0 40px;
 }
 
-/* Botão de contato com estilo e hover */
 header .btn-contato button{
-    background: transparent; /* Fundo transparente */
+    background: transparent;
     padding: 5px 40px;
     border: 1px solid var(--search-text);
     color: var(--search-text);
@@ -235,12 +207,10 @@ header .btn-contato button{
     font-weight: 500;
     cursor: pointer;
 }
-/* estilo menu mobile */
 #menu-toggle {
     display: none;
 }
 
-/* Estilo do botão abrir */
 .btn-abrir-menu i {
     color: var(--search-text);
     font-size: 40px;
@@ -248,7 +218,6 @@ header .btn-contato button{
     cursor: pointer;
 }
 
-/* Estilo menu mobile fechado */
 .menu-mobile {
     background-color: var(--search-bar);
     height: 100vh;
@@ -261,12 +230,10 @@ header .btn-contato button{
     transition: 0.4s ease;
 }
 
-/* Estilo quando o menu está visível */
 #menu-toggle:checked ~ .menu-mobile {
     width: 20%;
 }
 
-/* Estilo botão fechar */
 .menu-mobile .btn-fechar {
     padding: 20px 5%;
     cursor: pointer;
@@ -278,7 +245,6 @@ header .btn-contato button{
     margin-right: 100%;
 }
 
-/* Lista de links */
 .menu-mobile ul {
     text-align: right;
 }
@@ -288,15 +254,15 @@ header .btn-contato button{
     font-size: 20px;
     font-weight: 300;
     padding: 20px 5%;
-    height: -10px; /* Altura total da barra (menos exagerada) */
+    height: -10px;
     border-radius: 20px;
     width: 90px;
     display: block;
 }
 
 .menu-mobile ul li a:hover {
-    color: var(--search-text); /* Cor ao passar o mouse */
-    transition: 0.3s all; /* Transição suave */
+    color: var(--search-text);
+    transition: 0.3s all;
 }
 .overlay {
     position: fixed;
@@ -304,36 +270,32 @@ header .btn-contato button{
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.6); /* Fundo escuro com transparência */
+    background-color: rgba(0, 0, 0, 0.6);
     z-index: 9990;
     opacity: 0;
     pointer-events: none;
     transition: 0.4s ease;
 }
 
-/* Ativa o fundo escuro quando o menu está aberto */
 #menu-toggle:checked ~ .overlay {
     opacity: 1;
     pointer-events: all;
 }
 
-
-/* Título principal com cor, tamanho e alinhamento */
 h2.title {
     color: var(--text-color);
     font-size: 34px;
     text-align: center;
     font-weight: 600;
     margin: 20px 0;
-    padding: 10px 30px; /* Espaçamento interno */
-    display: inline; /* Fica na mesma linha */
-    width: auto; /* Não força largura total */
-    white-space: nowrap; /* Impede quebra de linha */
-    height: auto; /* Remove altura fixa */
-    line-height: 1.5; /* Espaçamento entre linhas */
-    white-space: normal;    /* Permite texto em linha única */
+    padding: 10px 30px;
+    display: inline;
+    width: auto;
+    white-space: nowrap;
+    height: auto;
+    line-height: 1.5;
+    white-space: normal;    
 }
-/* Destaque dentro do título */
 h2.title span {
     color: var(--sid-nav);
     font-size: 34px;
@@ -341,18 +303,17 @@ h2.title span {
     font-weight: 500;
     margin: 20px 0;
     padding: 0 0 4px;
-    display: inline-flex; /* Fica na mesma linha */
-    white-space: nowrap; /* Impede quebra de linha */
-    height: auto;           /* Remove altura fixa */
+    display: inline-flex;
+    white-space: nowrap;
+    height: auto;           
 }
 button:hover, form .btn-enviar input:hover{
-    box-shadow: 0px 0px 8px var(--sid-nav); /* Sombra suave */
+    box-shadow: 0px 0px 8px var(--sid-nav);
     background: var(--search-text);
     color: #fff;
-    transition: 0.5s all; /* Transição suave */
-    transform: scale(1.05); /* Leve aumento de tamanho */
+    transition: 0.5s all;
+    transform: scale(1.05);
 }
-/* Lista de navegação com espaçamento e estilo */
 .nav-links{
     list-style: none;
     display: flex;
@@ -361,19 +322,16 @@ button:hover, form .btn-enviar input:hover{
     cursor: pointer;
 }
 
-/* Links da navegação com cor e tamanho */
 .nav-links a{
     color: #fff;
     font-size: 12px;
 }
 
-/* Efeito hover nos links da navegação */
 .nav-links a :hover{
     color: var(--search-text);
     transition: 0.3s all;
 }
 
-/* Estilo do logo com borda arredondada */
 .logo{
     height: 40px;
     width: 40px;
@@ -388,7 +346,6 @@ button:hover, form .btn-enviar input:hover{
     cursor: pointer;
 } 
 
-/* Hover no logo com sombra e mudança de cor */
 .logo:hover{
     box-shadow: 0px 0px 8px #1fbbb8fa;
     background: var(--search-text);
@@ -396,24 +353,20 @@ button:hover, form .btn-enviar input:hover{
     transition: 0.5s all;
 }
 
-/* Hover para botões na seção topo do site */
 .topo-do-site button :hover{
     box-shadow: 0px 0px 8px var(--search-text);
 }
 
-/* Container para textos com padding superior e lateral */
 .container-text{
     padding: 150px 0 0 130px;
 }
 .seletor {
-  display: flex;
+    display: flex;
 }
-/* Botão de pesquisa na navbar */
 
-/* Estilo do botão da barra de pesquisa */
 nav .nav-primary .search-bar button {
     height: 40px;
-    border-radius: 20px; /* Bordas arredondadas */
+    border-radius: 20px;
     border: none;
     margin-left: 10px;
     padding: 0 20px;
@@ -424,13 +377,11 @@ nav .nav-primary .search-bar button {
     transition: background 0.3s;
 }
 
-/* Efeito hover do botão de pesquisa */
 nav .nav-primary .search-bar button:hover {
     background-color: var(--search-text);
     color: #fff;
 }
 
-/* Estilo do input da barra de pesquisa */
 nav .nav-primary .search-bar input {
     height: 40px;
     border-radius: 20px;
@@ -442,28 +393,24 @@ nav .nav-primary .search-bar input {
     background-color: var(--search-bar);
 }
 
-/* Placeholder do input da barra de pesquisa */
 nav .nav-primary .search-bar input::placeholder {
     color: var(--text-color);
 }
 
-/* Estilização do topo da página */
 section.topo-do-site{
     padding: 60px 4%;
 }
 
-/* Flex container na seção topo para alinhamento e espaçamento */
 section.topo-do-site .flex{
     align-items: center;
     justify-content: center;
-    gap: 40px; /* Espaçamento entre itens */
-    flex-wrap: wrap; /* Permite quebra de linha */
-    max-width: 1200px; /* Largura máxima do container */
-    margin: 0 auto; /* Centraliza horizontalmente */
+    gap: 40px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 60px 0;
 }
 
-/* Estilos para textos dentro da seção topo */
 .text h3{
     color: var(--text-color);
     font-size: 23px;
@@ -488,7 +435,6 @@ section.topo-do-site .flex{
     font-size: 19px;
 }
 
-/* Interface flexível para elementos alinhados */
 .interface{
     color: var(--text-color);
     display: flex;
@@ -501,39 +447,35 @@ section.topo-do-site .flex{
     margin-left: 5px;
     align-items: center;
 }
-/* estilo sobre */
 section .sobre{
     padding: 80px 4%;
-    padding-top: 110px; /* ajuste conforme a altura do seu header/nav */
+    padding-top: 110px;
     padding-bottom: 40px;
     padding-left: 4%;
     padding-right: 4%;
 }
-/* Cabeçalho/nav com z-index alto */
 nav, header {
     z-index: 100;
 }
 
-/* Imagem do sobre */
 section.sobre .img-sobre{
-    position: sticky; /* Fixa a imagem na tela */
-    top: 70px; /* altura exata do seu nav/header */
-    width: 750px; /* Largura fixa */
-    height: 420px; /* Altura fixa */
-    max-width: 100%; /* Responsivo, não ultrapassa 100% */
+    position: sticky;
+    top: 70px;
+    width: 750px;
+    height: 420px;
+    max-width: 100%;
     display: flex; 
-    align-items: center; /* Centraliza verticalmente */
-    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;
+    justify-content: center;
     padding: 10px;
     margin: 0;
     background: transparent;
     border: none;
-    z-index: 10; /* Fica abaixo do header/nav */
+    z-index: 10;
 }
 
-/* Estilização da imagem dentro da seção sobre */
 section.sobre .img-sobre img {
-    width: 100%; /* Largura total do container */
+    width: 100%;
     height: 90%; 
     object-fit: cover;
     border-radius: 10px;
@@ -576,109 +518,100 @@ section.sobre .flex{
     margin: 0 5px;
     transition: 0.2s;
 }
-/* Seção projetos */
 section.projetos{
     padding: 80px 4%;
-    margin-top: 0px; /* Remove margem superior */
-    padding-top: 110px; /* Ajuste conforme a altura do seu header/nav */
+    margin-top: 0px;
+    padding-top: 110px;
     padding-bottom: 40px;
 }
 
-/* Flex container para projetos */
 section .projetos .flex{
     gap: 60px;
 }
 
-/* Caixa de cada projeto */
 .projetos .projetos-box{
     color: var(--text-color);
     padding: 20px;
     border-radius: 20px;
     margin-top: 45px;
     margin: 20px;
-    transition: 1.2s; /* Animação suave */
+    transition: 1.2s;
 }
 
-/* Ícone dentro da caixa de projeto */
 .projetos .projetos-box i{
     font-size:70px;
     color: var(--sid-nav);
     padding: 40px;
 }
 
-/* Título do projeto */
 .projetos .projetos-box h3{
     font-size: 28px;
     margin: 15px 10px;
 }
 
-/* Efeito hover nas caixas dos projetos */
 .projetos .projetos-box:hover{
-    transform: scale(1.05); /* Aumenta levemente */
-    box-shadow: 0 0 20px #ffffffd3; /* Sombra brilhante */
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #ffffffd3;
 }
 
-/* Título da interface dos projetos */
 .interface .title {
-    margin-top: 0;       /* Remove espaço acima do título */
-    margin-bottom: 0;    /* Ajuste se quiser menos espaço abaixo */
+    margin-top: 0;       
+    margin-bottom: 0;    
 }
 
 .interface h2 {
-    display: inline-block;   /* Fica reto e centralizado */
-    width: auto;             /* Não força largura total */
-    white-space: nowrap;     /* Impede quebra de linha */
+    display: inline-block;   
+    width: auto;             
+    white-space: nowrap;     
     text-align: center;
     margin-bottom: 30px;
     font-size: 2.2rem;
     font-weight: 600;
     color: var(--text-color);
-    margin: 0 auto; /* Centraliza horizontalmente */
+    margin: 0 auto;
 }
-/* Destaque no título da interface */
 .interface span {
-    display: inline;         /* Garante que fique na mesma linha */
+    display: inline;         
     color: var(--search-text);
     font-size: 2.2rem;
     font-weight: 600;
     margin: 0;
     padding: 5px;
-    margin: 0 auto; /* Centraliza horizontalmente */
+    margin: 0 auto;
 }
-/* Sessão habilidades */
 .habilidades h2{
-    display: inline-block;   /* Fica reto e centralizado */
-    width: auto;             /* Não força largura total */
-    white-space: nowrap;     /* Impede quebra de linha */
+    display: inline-block;   
+    width: auto;             
+    white-space: nowrap;     
     text-align: center;
     margin-bottom: 30px;
     font-size: 2.2rem;
     padding: 0 1%;
     font-weight: 600;
     color: var(--text-color);
-    margin: 5px auto; /* Centraliza horizontalmente */
-    margin-top: 5%;       /* Remove espaço acima do título */
+    margin: 5px auto;
+    margin-top: 5%;       
 }
 .habilidades span{
-    display: inline;         /* Garante que fique na mesma linha */
+    display: inline;         
     color: var(--search-text);
     font-size: 2.2rem;
     font-weight: 600;
     margin: 0;
     padding: 30px 0;
-    margin: 0 auto; /* Centraliza horizontalmente */
+    margin: 0 auto;
 }
 .habilidades {
     width: 500px;
     padding: 0 50px;
     border-radius: 20px;
-    margin: 0 auto; /* Corrige 'margin: center' para centralizar */
+    margin: 0 auto;
     background-color: var(--nav-color);
     box-shadow: 0 15px 20px rgba(0, 0, 0, 0.199);
     font-size: large;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centraliza o conteúdo interno */
+    align-items: center;
 }
 
 .habilidades h3 {
@@ -700,8 +633,8 @@ section .projetos .flex{
 }
 
 .habilidades .barras {
-    background-color: #ccc; /* Fundo branco visível */
-    height: 10px; /* Altura total da barra (menos exagerada) */
+    background-color: #ccc;
+    height: 10px;
     border-radius: 20px;
     display: block;
     padding: 4% 0;
@@ -710,7 +643,6 @@ section .projetos .flex{
     transition: .5s ease-in-out;
 }
 
-/* Barra preenchida */
 .barras > span {
     height: 10px;
     padding: 10% 0;
@@ -779,49 +711,44 @@ section .projetos .flex{
     }
 }
 
-/* estilo curiosidades */
 section .curiosidades{
     padding: 80px 4%;
-    margin-top: 0px; /* Remove margem superior */
-    padding-top: 110px; /* Ajuste conforme a altura do seu header/nav */
+    margin-top: 0px;
+    padding-top: 110px;
     padding-bottom: 40px;
 }
 section .curiosidades .flex{
     gap: 60px;
 }
 
-/* Caixa de cada projeto */
 .curiosidades .curiosidades-box{
     color: var(--text-color);
     padding: 20px;
     border-radius: 20px;
     margin-top: 45px;
     margin: 20px;
-    transition: 1.2s; /* Animação suave */
+    transition: 1.2s;
 }
 
-/* Ícone dentro da caixa de projeto */
 .curiosidades .curiosidades-box i{
     font-size:70px;
     color: var(--sid-nav);
     padding: 40px;
 }
 
-/* Título do projeto */
 .curiosidades .curiosidades-box h3{
     font-size: 28px;
     margin: 15px 10px;
 }
 
-/* Efeito hover nas caixas dos projetos */
 .curiosidades .curiosidades-box:hover{
-    transform: scale(1.05); /* Aumenta levemente */
-    box-shadow: 0 0 20px #ffffffd3; /* Sombra brilhante */
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #ffffffd3;
 }
 .txt-curiosidades h2 {
-    display: inline-block;   /* Fica reto e centralizado */
-    width: auto;             /* Não força largura total */
-    white-space: nowrap;     /* Impede quebra de linha */
+    display: inline-block;   
+    width: auto;             
+    white-space: nowrap;     
     text-align: center;
     margin-bottom: 30px;
     font-size: 2.2rem;
@@ -829,30 +756,28 @@ section .curiosidades .flex{
     color: var(--text-color);
     padding: 0 20px;
 }
-/* Destaque no título da interface */
 .txt-curiosidades span {
-    display: inline;         /* Garante que fique na mesma linha */
+    display: inline;         
     color: var(--search-text);
     font-size: 2.2rem;
     font-weight: 600;
     margin: 0;
     padding: 5px;
-    margin: 0 auto; /* Centraliza horizontalmente */
+    margin: 0 auto;
 }
 .txt-curiosidades p{
     padding: 5px 20px;
 }
-/* estilo contato */
 section.contato{
     padding: 80px 4%;
 }
 form{
-    max-width: 500px; /* Largura máxima do formulário */
-    margin: 0 auto; /* Centraliza horizontalmente */
-    display: flex; /* Flexbox para alinhar itens */
-    justify-content: center; /* Centraliza horizontalmente */
-    flex-direction: column; /* Alinha itens verticalmente */
-    gap: 10px; /* Espaçamento entre os campos */
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
     margin-top: 40px;
 }
 form input, form textarea{
@@ -861,35 +786,33 @@ form input, form textarea{
     border:0;
     outline: 0;
     padding: 20px 15px;
-    border-radius: 15px; /* Bordas arredondadas */
-    color: var(--text-color); /* Cor do texto */
-    font-size: 18px; /* Tamanho da fonte */
+    border-radius: 15px;
+    color: var(--text-color);
+    font-size: 18px;
 }
 form textarea{
-    resize: none; /* Impede redimensionamento */
-    max-height: 160px; /* Altura fixa */
+    resize: none;
+    max-height: 160px;
 }
 form .btn-enviar{
-    margin-top: 20px; /* Espaço acima do botão */
-    color: var(--text-color); /* Cor do texto do botão */
-    font-weight: 700; /* Peso da fonte */
-    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    margin-top: 20px;
+    color: var(--text-color);
+    font-weight: 700;
+    cursor: pointer;
 }
 form .btn-enviar input{
-    width: 120px; /* Largura do botão */
-    text-align: center; /* Centraliza o texto */
+    width: 120px;
+    text-align: center;
 }
 
-
-/* Estilos gerais do rodapé fixo */
 footer{
     padding: 40px 4%;
     box-shadow: 0 0 40px 10px #3436b879;
 }
 footer .flex {
-   display: flex;
-   justify-content: flex-end; /* Alinha o conteúdo para a direita */
-   align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 .line-footer .flex {
     justify-content: flex-end;
@@ -905,20 +828,19 @@ footer .line-footer p{
     padding: 0 20px;
 }
 .flex {
-   width: 100%;
+    width: 100%;
 }
 footer .line-footer{
     padding: 20px 0;
 }
-    /* Adicione ao final do arquivo ou personalize para cada seção */
 section {
-    box-shadow: 0 -8px 16px -8px #3436b879 inset; /* Sombra interna */
-    border-top: 2px solid #f8fafa25; /* Cor da linha divisória */
-    margin-top: 60px;              /* Espaço antes da linha */
-    padding-top: 40px;             /* Espaço após a linha */
+    box-shadow: 0 -8px 16px -8px #3436b879 inset;
+    border-top: 2px solid #f8fafa25;
+    margin-top: 60px;              
+    padding-top: 40px;             
 }
 section:first-of-type {
-    border-top: none; /* Remove a linha da primeira seção */
+    border-top: none;
     margin-top: 0;
 }
 section {
@@ -949,12 +871,10 @@ hr.divisor {
         gap: 40px;
     }
 
-    /* cabeçalho */
     .menu, .btn-contato {
         display: none;
     }
 
-    /* topo do site */
     .text h1 {
         font-size: 30px;
     }
@@ -972,7 +892,6 @@ hr.divisor {
         border-radius: 10px;
     }
 
-    /* projetos */
     section.projetos {
         padding: 40px 8%;
     }
@@ -997,7 +916,6 @@ hr.divisor {
         font-size: 15px;
     }
 
-    /* sobre */
     section.sobre {
         padding: 80px 8%;
     }
@@ -1032,7 +950,6 @@ hr.divisor {
         text-align: justify;
     }
 
-    /* habilidades */
     .habilidades {
         width: 320px;
         padding: 5px 50px;
@@ -1047,7 +964,6 @@ hr.divisor {
         font-size: 23px;
     }
 
-    /* curiosidades */
     .curiosidades .curiosidades-box i {
         font-size: 38px;
         padding: 40px 10px;
@@ -1062,12 +978,10 @@ hr.divisor {
         font-size: 15px;
     }
 
-    /* contato */
     section.contato {
         text-align: center;
     }
 
-    /* rodapé */
     footer .flex {
         flex-direction: column;
     }
