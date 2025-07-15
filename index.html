@@ -30,13 +30,35 @@
                         <a href="#contato">
                             <button>Contato</button>
                         </a>
+                    </div>
                 </ul>        
-                    </div>
+                    <input type="checkbox" id="menu-toggle" hidden>
+
+                    <!-- Overlay escuro -->
+                    <label for="menu-toggle" class="overlay"></label>
+
+                    <!-- Botão para abrir o menu -->
+                    <label for="menu-toggle" id="menu-mobile" class="btn-abrir-menu">
+                        <i class="bi bi-list"></i>
+                    </label>
+
+                    <!-- Menu Mobile -->
                     <div class="menu-mobile">
-                        <div class="btn-fechar">
+                        <!-- Botão para fechar o menu -->
+                        <label for="menu-toggle" class="btn-fechar">
                             <i class="bi bi-x-lg"></i>
-                        </div>
+                        </label>
+
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#sobre">Sobre</a></li>
+                            <li><a href="#projetos">Projetos</a></li>
+                            <li><a href="#habilidades">Habilidades</a></li>
+                            <li><a href="#Curiosidades">Curiosidades</a></li>
+                            <li><a href="#contato">Contato</a></li>
+                        </ul>
                     </div>
+
             </div><!--Fecha menu-->
         </div> <!--Fecha nav bar-->
     </nav>
